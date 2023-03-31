@@ -6,13 +6,27 @@
 --Dark-grayish-blue: hsl(236, 13%, 42%);
 --Very-dark-blue: hsl(240, 100%, 5%);
 }
-body{
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+}
+.container{
+    width: 95%;
+    margin: 20px auto;
+}
+@media only screen and (min-width: 300px) and (max-width:799px) {
+  body{
     background-color: var(--Off-white);
     font-family: 'Inter', sans-serif;
+   
 }
-.logo{
-    margin-top: 24px
+img {
+  max-width: 100%;
 }
+
+
 .menu{
     display: flex;
     flex-direction: column;
@@ -44,20 +58,26 @@ body{
 .list{
     display: none;
 }
-
+.nav-header{
+    display: flex;
+justify-content: space-between;
+padding: 25px 10px;
+}
 .hamburguer{
-    position: relative;
-     right: -369px;
-  top: -35px;
+  
+border: 0;
+background-color: transparent;
+cursor: pointer;
   cursor: pointer;
 }
 .icon-menu{
+    margin-top: 10px;
 
 }
 .close{
   position: relative;
-    right: -205px;
- top:-15px;
+    right: -155px;
+ top:-8px;
  cursor: pointer;
  width: 25px;
  
@@ -84,6 +104,9 @@ button{
     font-size: 15px;
     cursor: pointer;
 }
+.btn:hover{
+    color: black;
+}
 aside{
     margin-top: 75px;
     background-color: black;
@@ -101,26 +124,236 @@ aside h4{
 aside hr{
     margin-top: 55px;
 }
-article{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-margin-top: 55px;
-margin-bottom: 75px;
-}
+
 .little-img{
     width: 145px;
     padding: 15px;
 }
-.boxie{
-    margin-left: -20px;
+.one, .two, .three{
+    margin-top: 15px;
 }
-.boxie h1{
-    color: var(--Grayish-blue);
-    font-size: 30px;
+
+aside h4:hover{
+    color: var(--Soft-orange);
+    cursor: pointer;
 }
-.boxie h6{
-    font-size: 15px;
-    margin: 0 0 15px 0;
-    font-weight: 800;
+h6:hover{
+    color: var(--Soft-red);
+    cursor: pointer;
 }
+.more-articles article { 
+    margin: 50px 0;
+
+}
+
+
+
+.first-article,
+.second-article,
+.third-article { 
+    display: flex;
+    gap: 15px;
+}
+
+.text-info { 
+    flex: 1;
+}
+
+.text-info h3 {
+    color: var(--Dark-grayish-blue);
+    font-weight: 700;
+}
+
+.text-info h4 {
+    transition: all 0.3s;
+}
+
+.text-info h4:hover {
+    color: var(--Soft-red);
+    cursor: pointer;
+}
+
+.text-info p {
+    color: var(--Very-dark-blue);
+}
+
+  .litle-text{
+    margin-left: -1px;
+  }
+
+
+}
+
+
+@media (min-width: 800px) and (max-width: 1780px) {
+    body{
+      background-color: var(--Off-white);
+      font-family: 'Inter', sans-serif;
+      margin-right: 55px;
+      margin-left: 55px;
+  }
+  .item:hover{
+color: var(--Soft-red);
+  }
+
+  .container{
+  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    margin: 20px;
+  }
+  .ASIDE{
+    grid-row: 1 / 3;
+    grid-column-start: 3;
+  }
+  .headline {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+  .img{
+    grid-column: span 2;
+   
+  }
+  .logo{
+      margin-top: 24px;
+      margin-left: -25px;
+  }
+  .menu{
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      gap: 25px;
+ 
+  }
+  .close, .hamburguer{
+    display: none;
+  }
+  .menu li a {
+    text-decoration: none;
+    outline: none;
+    color: black;
+  }
+  
+  
+  .img-game{
+      width: 100%;
+      margin-bottom: 0;
+      object-fit: cover;
+      max-height: 400px;
+      margin-bottom: -10px;
+  }
+
+  h3{
+      font-size: 45px;
+      margin-top: 15px;
+     
+  }
+  button{
+      background-color: var(--Soft-red);
+      color: white;
+      padding: 15px 35px 15px 35px;
+      letter-spacing: 4px;
+      font-weight:400;
+      font-size: 15px;
+      cursor: pointer;
+  }
+  .btn:hover{
+      color: black;
+  }
+  aside{
+    
+      background-color: black;
+      color: white;
+      padding: 15px;
+  }
+  aside h2{
+      color: var(--Soft-orange);
+      font-size: 30px;
+  }
+  aside h4{
+      
+      font-size: 20px;
+  }
+  aside hr{
+      margin-top: 55px;
+  }
+
+  .little-img{
+    max-width: 170px;
+      padding: 15px;
+  }
+  .boxie{
+   grid-column: span2; 
+  }
+ 
+  .more-articles {
+    display: grid;
+    gap: 10px;
+    grid-column: span 3;;
+    grid-template-columns: repeat(3,1fr);
+  }
+  .first-article, .second-article, .third-article {
+    display: flex;
+    gap: 15px;
+  }
+
+
+}
+  
+
+
+  aside h4:hover{
+      color: var(--Soft-orange);
+      cursor: pointer;
+  }
+  .more-articles article { 
+    margin: 50px 0;
+
+}
+
+  h6:hover{
+      color: var(--Soft-red);
+      cursor: pointer;
+  }
+  
+      .hamburguer{
+          right: -990px;
+      }
+      .headline-text{
+        color: var(--Dark-grayish-blue);
+        margin-left: 15px;
+      }
+       
+        .close{
+          right: -395px;
+        }
+        
+       
+        .text-info h3 {
+            color: var(--Dark-grayish-blue);
+            font-weight: 700;
+        }
+        
+        .text-info h4 {
+            transition: all 0.3s;
+        }
+        .text-info{
+            margin-top: -15px;
+        }
+        
+        .text-info h4:hover {
+            color: var(--Soft-red);
+            cursor: pointer;
+        }
+        
+        .text-info p {
+            color: var(--Very-dark-blue);
+        }
